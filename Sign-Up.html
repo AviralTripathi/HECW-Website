@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="hecw.png" class="round"  type="image/x-icon">
+    <title>Sign_Up | HECW</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="form.css">
+    <!-- Fontawesome CDN Link For Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+    <form action="index.html" id="form1">
+        <h2 class="mx-5">Sign-Up</h2>
+        <div class="form-group fullname">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter your Name" name="name">
+        </div>
+        <div class="form-group email">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" placeholder="Enter your email address" name="email">
+        </div>
+        <div class="form-group password">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" name="password">
+            <i id="pass-toggle-btn" class="fa-solid fa-eye"></i>
+        </div>
+        <div class="form-group password">
+            <label for="password">Confirm Password</label>
+            <input type="password" id="cpassword" placeholder="Confrim Password" name="cpassword">
+            <i id="pass-toggle-btn" class="fa-solid fa-eye"></i>
+        </div>
+        <div class="container mx-5">
+            <div class="caution mx-5 mt-5">
+                <a href="Login.html" class="mx-5 mt-5">Already Signed Up?Login</a>
+            </div>
+
+        </div>
+
+        <div class="form-group submit-btn mb-6">
+            <input type="submit" value="Sign-Up" classs="mb-6 btn">
+        </div>
+        <div class="line">
+            <div class="media-options">
+                <a href="https:/accounts.google.com" class="field google">
+                    <i class="fab fa-google"></i>
+                    <span>Sign-Up using Google</span>
+                </a>
+            </div>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+    <script>
+        let url = 'https://script.google.com/macros/s/AKfycbwiGJwl1UA4tzPGhP5xx68xziX9R2fNVCsjYe8YyxsVR1gNxFJQoMiNzJBADPMsUroOKg/exec'
+           let form1=document.querySelector('#form1');
+           form1.addEventListener("submit",(e)=>{
+            e.target.btn="Signing-Up"
+            let d= new FormData(form1);
+            fetch(url,{
+                method:"POST",
+                body:d
+            }).then((resp)=>resp.text())
+            .then((finalRes)=>{
+                e.target.btn="Sign-Up"
+                alert('finalRes')
+
+            }
+            )
+            e.preventDefault();
+           })
+           </script>
+</body>
+
+</html>

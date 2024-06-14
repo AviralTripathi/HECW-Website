@@ -1,0 +1,60 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+.accordion-item{
+    background: rgb(250, 235, 215);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1), -2px -2px 8px rgba(0,0,0,0.1);
+}
+
+.accordion-button{
+    font-size: 1.0rem;
+    background: transparent;
+    outline: none;
+    border: 1px solid rgba(57, 34, 34, 0.1);
+    font-weight: 500;
+    
+}
+
+.accordion-body{
+    font-size: 0.8rem;
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+ .accordion-button:not(.collapsed){
+background: rgb(0, 0, 0,0.9);
+color: white;
+box-shadow: none;
+} 
+
+.accordion-button::after{
+    background-image: none;
+    content:"\f0d7";
+    font-family: sans-serif;
+    width: auto;
+    height: auto;
+}
+.navbar-brand{
+    color: white;
+}
+.nav-item a{
+    
+    color: blue;
+}
+.nav-item a:hover{
+    font-size: x-large;
+    color: blue
+}
+
+
+
+
+/* .accordion-button:not(.collapsed)::after{
+    background-image: none;
+} */
